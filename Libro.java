@@ -13,6 +13,7 @@ public class Libro {
     private String autor;
     private String titulo;
     private int numeroPaginas;
+    private String numeroReferencia;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
@@ -22,6 +23,7 @@ public class Libro {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = numeroPaginasLibro;
+        numeroReferencia = "";
     }
     
     public String getAutor () {
@@ -45,12 +47,31 @@ public class Libro {
     }
     
     public void imprimirDetalles () {
-        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas);
+        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: zzz");
+        if (numeroReferencia.length () >= 3) {
+            detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: " + numeroReferencia);
+        }
         System.out.println (detalles);
     }
     
     public String getDetalles() {
-        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas);
+        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de Referencia: zzz");
+        if (numeroReferencia.length () >= 3 ) {
+            detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: " + numeroReferencia);
+        }
         return detalles;
+    }
+    
+    public String getNumeroReferencia () {
+        return numeroReferencia;
+    }
+    
+    public void setNumeroReferencia (String numeroDeReferencia) {
+        if (numeroDeReferencia.length () >= 3) {
+        numeroReferencia = numeroDeReferencia;
+        }
+        else {
+            System.out.println ("Error al fijar numero de referencia, numero inferior a tres caracteres.");
+        }
     }
 }
