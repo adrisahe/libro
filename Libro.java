@@ -14,6 +14,7 @@ public class Libro {
     private String titulo;
     private int numeroPaginas;
     private String numeroReferencia;
+    private int vecesPrestado;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
@@ -24,6 +25,7 @@ public class Libro {
         titulo = tituloLibro;
         numeroPaginas = numeroPaginasLibro;
         numeroReferencia = "";
+        vecesPrestado = 0;
     }
     
     public String getAutor () {
@@ -47,17 +49,17 @@ public class Libro {
     }
     
     public void imprimirDetalles () {
-        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: zzz");
+        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: zzz" + " Veces prestado: " + vecesPrestado);
         if (numeroReferencia.length () >= 3) {
-            detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: " + numeroReferencia);
+            detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: " + numeroReferencia + " Veces prestado: " + vecesPrestado);
         }
         System.out.println (detalles);
     }
     
     public String getDetalles() {
-        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de Referencia: zzz");
+        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de Referencia: zzz" + " Veces prestado: " + vecesPrestado);
         if (numeroReferencia.length () >= 3 ) {
-            detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: " + numeroReferencia);
+            detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: " + numeroReferencia + " Veces prestado: " + vecesPrestado);
         }
         return detalles;
     }
@@ -68,10 +70,18 @@ public class Libro {
     
     public void setNumeroReferencia (String numeroDeReferencia) {
         if (numeroDeReferencia.length () >= 3) {
-        numeroReferencia = numeroDeReferencia;
+            numeroReferencia = numeroDeReferencia;
         }
         else {
             System.out.println ("Error al fijar numero de referencia, numero inferior a tres caracteres.");
         }
+    }
+    
+    public void prestar (int setPrestar) {
+        vecesPrestado = vecesPrestado + 1;
+    } 
+    
+    public int getVecesPrestado () {
+        return vecesPrestado;
     }
 }
