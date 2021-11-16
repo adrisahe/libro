@@ -55,9 +55,12 @@ public class Libro {
         if (esLibroDeTexto == true) {
             libroTexto = "si";
         }
-        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: zzz" + " Veces prestado: " + vecesPrestado + " Libro de texto: " + libroTexto);
+        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Veces prestado: " + vecesPrestado + " Libro de texto: " + libroTexto  + " Número de referencia: ");
         if (numeroReferencia.length () >= 3) {
-            detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: " + numeroReferencia + " Veces prestado: " + vecesPrestado + " Libro de texto: " + libroTexto);
+            detalles = (detalles + numeroReferencia);
+        }
+        else {
+            detalles = (detalles + "zzz");
         }
         System.out.println (detalles);
     }
@@ -67,9 +70,12 @@ public class Libro {
         if (esLibroDeTexto == true) {
             libroTexto = "si";
         }
-        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de Referencia: zzz" + " Veces prestado: " + vecesPrestado + " Libro de texto: " + libroTexto);
+        String detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Veces prestado: " + vecesPrestado + " Libro de texto: " + libroTexto  + " Número de Referencia: ");
         if (numeroReferencia.length () >= 3 ) {
-            detalles = ("Título: " + titulo + "," + " Autor: " + autor + "," + " Páginas: " + numeroPaginas + " Número de referencia: " + numeroReferencia + " Veces prestado: " + vecesPrestado + " Libro de texto: " + libroTexto);
+            detalles = (detalles + numeroReferencia);
+        }
+        else {
+            detalles = (detalles + "zzz");
         }
         return detalles;
     }
